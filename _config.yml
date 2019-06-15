@@ -72,8 +72,8 @@ descriptions:
 social:
   - name: Twitter
     icon: twitter
-    username: TheBenCentra
-    url: https://twitter.com/TheBenCentra
+    username: none_set
+    url: none_set
     desc: Follow me on Twitter
     share: true
 
@@ -86,15 +86,15 @@ social:
 
   - name: GitHub
     icon: github
-    username: bencentra
-    url: https://github.com/bencentra
+    username: Sangmun Jeong
+    url: https://github.com/sangmunjeong
     desc: Fork me on GitHub
-    share: false
+    share: true
 
   - name: LinkedIn
     icon: linkedin
-    username: Ben Centra
-    url: https://www.linkedin.com/pub/ben-centra/47/769/60a
+    username: none_set
+    url: none_set
     desc: Connect with me on LinkedIn
     share: true
 

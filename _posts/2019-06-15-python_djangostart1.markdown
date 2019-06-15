@@ -24,7 +24,12 @@ tags: python django
 source myvenv/bin/activate
 ```
 
-가상환경을 시작한 후 새로운 프로젝트 mysite를 만들어봅시다.
+가상환경을 종료하는 경우는 명령어를 입력합니다.
+```
+deactivate
+```
+
+가상환경을 시작했다면, 새로운 프로젝트 mysite를 만들어봅시다.
 
 ```
 (myvenv) Mac-Jui-MacBook-Pro:djangogirls mac_j$ django-admin startproject mysite .
@@ -42,11 +47,15 @@ source myvenv/bin/activate
 
 STATIC_URL다음에 이하의 소스코드를 추가합니다.
 
-`STATIC_ROOT = os.path.join(BASE_DIR, 'static')`
+```
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+```
 
 PythonAnywhere로 배포예정이므로 ALLOWED_HOSTS를 수정합니다.
 
-`ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']`
+```
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+```
 
 다음은 데이터 베이스를 설정합니다.
 
