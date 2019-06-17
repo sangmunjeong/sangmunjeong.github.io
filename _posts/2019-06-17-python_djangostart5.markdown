@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Django 공부를 위한 웹 페이지를 개발5_장고View"
-date:   2019-06-1７
+date:   2019-06-17
 categories: python
 tags: python django
 ---
