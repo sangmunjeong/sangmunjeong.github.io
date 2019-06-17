@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Django 공부를 위한 웹 페이지를 개발1_Django모델"
+title:  "Django 공부를 위한 웹 페이지를 개발2_Django모델"
 date:   2019-06-16
 categories: python
 tags: python django
