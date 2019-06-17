@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Django 공부를 위한 웹 페이지를 개발1_Django모델"
+date:   2019-06-16
+categories: python
+tags: python django
+---
+
 #Django모델
 
 블로그의 포스트를 저장하는 부분을 생성하도록 합니다.

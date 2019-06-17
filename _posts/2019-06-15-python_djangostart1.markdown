@@ -12,9 +12,7 @@ tags: python django
 > - Python 3.7.3 
 > - Django 2.0.13
 
-파이썬 및 장고 실습은 장고걸스 튜토리얼을 참조했습니다.
-
-[장고걸스 튜토리얼]: https://tutorial.djangogirls.org/ko/
+파이썬 및 장고 실습은 장고걸스　튜토리얼（https://tutorial.djangogirls.org/ko/）을 참조했습니다.
 
 처음은 파이썬3 설치 및 가상환경과 장고 설치를 마쳤습니다.
 
