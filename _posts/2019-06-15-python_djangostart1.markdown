@@ -12,7 +12,7 @@ tags: python django
 > - Python 3.7.3 
 > - Django 2.0.13
 
-파이썬 및 장고 실습은 장고걸스　튜토리얼（https://tutorial.djangogirls.org/ko/）을 참조했습니다.
+파이썬 및 장고 실습은 [장고걸스 튜토리얼]:https://tutorial.djangogirls.org/ko/을 참조했습니다.
 
 처음은 파이썬3 설치 및 가상환경과 장고 설치를 마쳤습니다.
 
@@ -117,3 +117,5 @@ Quit the server with CONTROL-C.
 위에서 나온 주소 http://127.0.0.1:8000/ 을 입력하면 생성된 웹 페이지를 확인할 수 있습니다.
 
 ![My screenshot]({{ "/assets/post_image/image1906/2019-06-15 8.12.58.png"}})
+
+
