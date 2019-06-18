@@ -119,4 +119,4 @@ Quit the server with CONTROL-C.
 ![My screenshot]({{ "/assets/post_image/image1906/2019-06-15 8.12.58.png"}})
 
 
-[Djangogirls] : https://tutorial.djangogirls.org/ko/
+[Djangogirls]: https://tutorial.djangogirls.org/ko/
