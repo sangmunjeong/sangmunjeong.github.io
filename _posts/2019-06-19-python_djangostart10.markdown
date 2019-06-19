@@ -14,7 +14,7 @@ tags: python django
 
 일단, 부트스트랩을 사용하는 방법을 소개합니다. 물론, 직접 코딩하는것도 좋지만, 이것저것 사용해봅시다.
 
-[부트스트랩(Bootstrap)](https://getbootstrap.com/)은 다양한 HTML, CSS 코드가 있으며 템플릿도 존재합니다.
+[부트스트랩(Bootstrap)][부트스트랩]은 다양한 HTML, CSS 코드가 있으며 템플릿도 존재합니다.
 
 부트스트랩을 설치하는건 간단합니다.
 
@@ -55,3 +55,4 @@ h1 a {
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 ```
 
+[부트스트랩]: https://getbootstrap.com/
