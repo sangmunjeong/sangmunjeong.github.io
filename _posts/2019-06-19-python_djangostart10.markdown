@@ -14,13 +14,13 @@ tags: python django
 
 일단, 부트스트랩을 사용하는 방법을 소개합니다. 물론, 직접 코딩하는것도 좋지만, 이것저것 사용해봅시다.
 
-[부트스트랩(Bootstrap)][부트스트랩]은 다양한 HTML, CSS 코드가 있으며 템플릿도 존재합니다.
+[부트스트랩(Bootstrap)][bootstrap]은 다양한 HTML, CSS 코드가 있으며 템플릿도 존재합니다.
 
 부트스트랩을 설치하는건 간단합니다.
 
 `.html` 파일의 `<head>` 에 링크를 넣기만 하면 됩니다.
 
-```python
+```
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 ```
@@ -45,16 +45,16 @@ h1 a {
 
 `blog/templates/blog/post_list.html` 파일의 첫줄에 `{% load static %}` 을 추가합니다.
 
-```python
+```
 {% load static %}
 ```
 
 그다음 `<head>` 와 `</head>` 사이에 아래의 코드를 추가합니다.
 
-```python
+```
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 ```
 
 그밖에도 다양한 CSS를 적용할 수 있습니다.
 
-[부트스트랩]: https://getbootstrap.com/
+[bootstrap]: https://getbootstrap.com/
