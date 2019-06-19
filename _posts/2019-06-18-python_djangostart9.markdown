@@ -16,7 +16,7 @@ tags: python django
 
 `body`에 코드를 넣어 실행하겠습니다.
 
-```
+```python
 {{ posts }}
 ```
 
@@ -24,11 +24,10 @@ tags: python django
 
 좀더 깔끔하게 정리해서 출력되도록 가다듬어 봅니다.
 
-```
+```python
 <div>
     <h1><a href="/">Django Girls Blog</a></h1>
 </div>
-
 {% for post in posts %}
     <div>
         <p>published: {{ post.published_date }}</p>
