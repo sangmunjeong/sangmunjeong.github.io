@@ -35,11 +35,11 @@ tags: python django
 
 간단한 테스트를 해보겠습니다.
 
-```python
+~~~
 h1 a {
     color: #FCA205;
 }
-```
+~~~
 
 이제 이 css 파일을 html에서 불러와 사용하기 위한 작업을 하겠습니다.
 
