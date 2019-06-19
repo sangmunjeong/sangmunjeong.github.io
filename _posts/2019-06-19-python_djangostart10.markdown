@@ -35,7 +35,7 @@ tags: python django
 
 간단한 테스트를 해보겠습니다.
 
-```
+```python
 h1 a {
     color: #FCA205;
 }
