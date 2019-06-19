@@ -35,7 +35,7 @@ tags: python django
 
 간단한 테스트를 해보겠습니다.
 
-```css
+```
 h1 a {
     color: #FCA205;
 }
@@ -54,5 +54,7 @@ h1 a {
 ```python
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 ```
+
+그밖에도 다양한 CSS를 적용할 수 있습니다.
 
 [부트스트랩]: https://getbootstrap.com/
