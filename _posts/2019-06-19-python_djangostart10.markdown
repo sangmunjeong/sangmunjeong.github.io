@@ -31,7 +31,7 @@ tags: python django
 
 정적파일은 `blog` 앱에 추가해서 사용하면 됩니다.
 
-blog/static/css 디렉토리에 `blog.css` 를 파일을 추가해서 사용하겠습니다.
+blog/static/css 디렉토리에 blog.css 파일을 추가해서 사용하겠습니다.
 
 간단한 테스트를 해보겠습니다.
 
