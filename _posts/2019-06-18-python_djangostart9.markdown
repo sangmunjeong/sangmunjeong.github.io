@@ -16,14 +16,18 @@ tags: python django
 
 `body`에 코드를 넣어 실행하겠습니다.
 
+```
 {% raw %}
 {{ posts }}
 {% endraw %}
+```
 
 결과를 보면 쿼리셋에서 받은 모양으로 출력됩니다.
 
 좀더 깔끔하게 정리해서 출력되도록 가다듬어 봅니다.
 
+
+```
 {% raw %}
 <div>
     <h1><a href="/">Django Girls Blog</a></h1>
@@ -36,6 +40,8 @@ tags: python django
     </div>
 {% endfor %}
 {% endraw %}
+```
+
 
 반복문을 사용해서 각 리스트의 내용을 불러와 출력해주도록 되어있습니다.
 
