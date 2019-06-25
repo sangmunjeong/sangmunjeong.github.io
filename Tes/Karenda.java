@@ -52,17 +52,6 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 	boolean iskongetu = false;
 	boolean isDaitai = false;
 
-	private HashMap<String, Integer> DowIndex = new HashMap<>();
-	{
-		DowIndex.put("月",1);
-		DowIndex.put("火",2);
-		DowIndex.put("水",3);
-		DowIndex.put("木",4);
-		DowIndex.put("金",5);
-		DowIndex.put("土",6);
-		DowIndex.put("日",0);
-	};
-
 	Karenda(String title)
 	{
 		setTitle(title);
@@ -592,7 +581,7 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 				numMonth = Integer.parseInt(comboday[0]);
 			}
 			numCount = Integer.parseInt(comboday[1]);
-			numDoW = DowIndex.get(comboday[2]);
+			numDoW = Integer.parseInt(comboday[2]);
 		}catch(Exception e){
 
 		}
