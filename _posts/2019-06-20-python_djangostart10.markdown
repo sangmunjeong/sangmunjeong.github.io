@@ -18,7 +18,7 @@ CSS 적용법에 대해서 정리해보겠습니다.
 
 부트스트랩을 설치하는건 간단합니다.
 
-`.html` 파일의 `<head>` 에 링크를 넣기만 하면 됩니다.
+`html` 파일의 `<head>` 에 링크를 넣기만 하면 됩니다.
 
 ```
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
