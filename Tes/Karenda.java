@@ -23,6 +23,18 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/*
+ * このプログラムはjava swingを使用し作成されています。
+ * このプログラムは春分、秋分計算はメソッドで処理します。
+ * 休日の追加はtxtファイルを作ることで出来ます。
+ * プログラム上で休日の追加が出来ます。
+ * 入力の形は○月○日／○月○番目○曜日があります。
+ * ○月○日の場合年の区分が出来ないです。
+ * ○月○日～○月○日までの複数の休日指定が出来ます。
+ * ○月○番目○曜日は年が変われば自動で計算し適用されます。
+ * 日曜日に休日が来る場合、次の月曜日は休日になります。
+ *
+ */
 public class Karenda extends JFrame implements ActionListener,KeyListener {
 
 	Calendar cal = Calendar.getInstance();
@@ -72,7 +84,7 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 		JButton btn1 = new JButton("◀");
 		JButton btn2 = new JButton("▶");
 		JButton today = new JButton("Today");
-		JButton mkfile = new JButton("祝日追加");
+		JButton mkfile = new JButton("休日追加");
 		mkfile.addActionListener(this);
 		mkfile.setActionCommand("mkfile");
 		btn1.addActionListener(this);
@@ -368,7 +380,7 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 			}
 			return true;
 		}
-		else if(m == 3 && d == 21)
+		else if(isUrudosi(y) == false && m == 3 && d == 21)
 		{
 			if(j == 0)//日曜日
 			{
@@ -527,6 +539,7 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 		//画面 update
 		this.update(this.getGraphics());
 	}
+	//ファイルを読み込んでListに入力
 	public void readfile() {
 		try {
 			String dirPath = "C:\\pleiades\\workspace\\Karenda\\date\\";
@@ -565,6 +578,7 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 		}
 		return maxdate;
 	}
+	//○月○番目○曜日の日付計算
 	private String getdate(String str) {
 
 		String[] comboday;
@@ -585,7 +599,7 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 		}catch(Exception e){
 
 		}
-
+		year = Integer.parseInt(yearT.getText());
 		int maxdate = getMaxDate(numMonth);
 		int startDay = yobi(year, numMonth);
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -649,11 +663,11 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 			monthT.setText(Integer.toString(date[1]));
 			y = date[0];
 			m = date[1];
-			readfile();
 		}
 		if(cmd.equals("mkfile")) {
 			MkfileWindow mkfile = new MkfileWindow();
 			mkfile.setVisible(true);
+			HolidayList.clear();
 			readfile();
 		}
 		getContentPane().requestFocusInWindow();
@@ -662,6 +676,8 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 			y = date[0];
 			m = date[1];
 		}
+		HolidayList.clear();
+		readfile();
 		setDay(y, m);
 
 	}
