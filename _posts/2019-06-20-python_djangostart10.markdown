@@ -18,7 +18,7 @@ CSS 적용법에 대해서 정리해보겠습니다.
 
 부트스트랩을 설치하는건 간단합니다.
 
-`html` 파일의 `<head>` 에 링크를 넣기만 하면 됩니다.
+html 파일의 <head> 에 링크를 넣기만 하면 됩니다.
 
 ```
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -33,11 +33,11 @@ CSS 적용법에 대해서 정리해보겠습니다.
 
 간단한 테스트를 해보겠습니다.
 
-`h1 a{ color: #FCA205; }`를 파일에 입력해 니다.
+h1 a{ color: #FCA205; }를 파일에 입력해 니다.
 
 이제 이 css 파일을 html에서 불러와 사용하기 위한 작업을 하겠습니다.
 
-`blog/templates/blog/post_list.html` 파일의 첫줄에 `{% load static %}` 을 추가합니다.
+blog/templates/blog/post_list.html 파일의 첫줄에 {% load static %} 을 추가합니다.
 
 ```
 {% load static %}
