@@ -33,7 +33,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	int[] HEINEN_M = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	int year = Calendar.getInstance().get(Calendar.YEAR);
 	static String INFOR_M = "メッセージ";
-	static String INFOR_NAME = "祝日の名称を入力してください。";
+	static String INFOR_NAME = "休日の名称を入力してください。";
 	static String INFOR_DAY = "日付を正しく入力してください。";
 	JTextField month1 = new JTextField("", 4);
 	JTextField day1 = new JTextField("", 4);
@@ -43,7 +43,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	JComboBox ComboMonth = new JComboBox(month);
 	JComboBox ComboCount = new JComboBox(count);
 	JComboBox ComboDoW = new JComboBox(DoW);
-	JLabel labelTitle = new JLabel("祝日を追加します。日付を入力してください。");
+	JLabel labelTitle = new JLabel("休日を追加します。日付を入力してください。");
 	JLabel labelMonth = new JLabel("月");
 	JLabel labelDay = new JLabel("日 ～ ");
 	JLabel labelMonth2 = new JLabel("月");
@@ -74,7 +74,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	};
 	MkfileWindow() {
 
-		setTitle("祝日SET");
+		setTitle("休日SET");
 		setBounds(200, 200, 450, 250);
 		setResizable(false);
 		setVisible(true);
@@ -215,6 +215,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 		}
 		return result;
 	}
+	//入力値の数字チェック
 	private boolean isNotString(String str) {
 		boolean result=true;
 		try {
@@ -290,6 +291,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 		}
 		return result;
 	}
+	//○月○番目○日の日付計算
 	private int DoWdate(int month, int DoW, int count){
 		int maxdate = getMaxDate(month);
 		int startDay = yobi(year, month);
@@ -312,6 +314,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 		con.weightx = wx;
 		con.weighty = wy;
 	}
+	//閏年の判別
 	private boolean isUrudosi(int n)
 	{
 		if(n % 400 == 0)
@@ -353,6 +356,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 		yobi = (yobi + 1) % 7;
 		return yobi;
 	}
+	//入力した月のmax日計算
 	private int getMaxDate(int month) {
 		int maxdate=0;
 		if(isUrudosi(year)) {
@@ -388,7 +392,6 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 			result = Normalizer.normalize(result, Normalizer.Form.NFKC);
 		}else if(radiotype2.isSelected()){
 			result = ComboMonth.getSelectedItem().toString() + "-" + ComboCount.getSelectedItem().toString() + "-" + DowIndex.get(ComboDoW.getSelectedItem().toString());
-//			result = ComboMonth.getSelectedItem().toString() + "-" + ComboCount.getSelectedItem().toString() + "-" + ComboDoW.getSelectedItem().toString();
 		}
 		return result;
 	}
