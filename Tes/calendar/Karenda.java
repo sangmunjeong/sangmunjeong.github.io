@@ -50,6 +50,7 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 	final String INFOR_MONTH = "1月から12月まで入力してください。";
 	final String TENNOU = "2/23"; // y >= 2020
 	static String INFOR_M = "メッセージ";
+	static String dirPath = "C:\\pleiades\\workspace\\Karenda\\date\\";//ディレクトリ
 	int[] URUDOSI_M = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	int[] HEINEN_M = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	JTextField yearT = new JTextField("");
@@ -70,8 +71,6 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 		setBounds(100, 100, 630, 520);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		readfile();
 
 		grid = new GridBagLayout();
 		gridcon = new GridBagConstraints();
@@ -443,7 +442,6 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 		for (int i = 0; i < HolidayList.size(); i++) {
 			String date = (String) HolidayList.get(i);
 			String[] dy = date.split("/");
-			;
 			int first = Integer.parseInt(dy[0]);
 			int last = Integer.parseInt(dy[1]);
 			if (m == first && d == last) {
@@ -530,19 +528,21 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 		}
 	}
 	//日の祝日や土曜日、日曜日を表示する
-	private void setDay(int y, int m)
+	public void setDay(int y, int m)
 	{
 		int dday = 0;//先月・来月の日
 		start = yobi(y, m);
 		dday = sengetu(y,m);//先月の日
+		//休日情報取得
+		HolidayList.clear();
+		readfile();
 		syukuzitu(y,m,dday,start);
 		//画面 update
-		this.update(this.getGraphics());
+		getContentPane().update(getContentPane().getGraphics());
 	}
 	//ファイルを読み込んでListに入力
 	public void readfile() {
 		try {
-			String dirPath = "C:\\pleiades\\workspace\\Karenda\\date\\";
 			File dir = new File(dirPath);
 			File[] fileList = dir.listFiles();
 			for(File file : fileList) {
@@ -565,8 +565,9 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 				}
 			}catch(Exception e) {
 			e.getStackTrace();
+			System.out.println(e);
 		}
-//		System.out.println(HolidayList);
+//		System.out.println("list :"+HolidayList);
 	}
 	private int getMaxDate(int month) {
 		int maxdate=0;
@@ -665,10 +666,8 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 			m = date[1];
 		}
 		if(cmd.equals("mkfile")) {
-			MkfileWindow mkfile = new MkfileWindow();
+			MkfileWindow mkfile = new MkfileWindow(this);
 			mkfile.setVisible(true);
-			HolidayList.clear();
-			readfile();
 		}
 		getContentPane().requestFocusInWindow();
 		if(pop == true)
@@ -677,7 +676,6 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 			m = date[1];
 		}
 		HolidayList.clear();
-		readfile();
 		setDay(y, m);
 
 	}
