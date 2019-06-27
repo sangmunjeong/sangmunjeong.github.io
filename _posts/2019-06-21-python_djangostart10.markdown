@@ -42,14 +42,24 @@ h1 a{ color: #FCA205; }
 
 이 파일을 html에서 호출해 사용합니다.
 
-`blog/templates/blog/post_list.html` 파일의 첫줄에 `{% load static %}` 을 추가합니다.
+`blog/templates/blog/post_list.html` 
+
+파일의 첫줄에 다음 코드를 추가합니다.
+
+{% raw %}
+```
+{% load static %}
+```
+{% endraw %}
 
 `<head>`에 다음의 코드를 추가합니다.
 
+{% raw %}
 ```
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 ```
+{% endraw %}
 
-그밖에도 다양하게 CSS를 적용해 봅시다.
+그 밖에도 다양하게 CSS를 적용해 볼수 있습니다.
 
 [bootstrap]: https://getbootstrap.com/
