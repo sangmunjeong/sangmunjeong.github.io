@@ -50,7 +50,7 @@ public class Karenda extends JFrame implements ActionListener,KeyListener {
 	final String INFOR_MONTH = "1月から12月まで入力してください。";
 	final String TENNOU = "2/23"; // y >= 2020
 	static String INFOR_M = "メッセージ";
-	static String dirPath = "C:\\pleiades\\workspace\\Karenda\\date\\";//ディレクトリ
+	static String dirPath = "date\\";//ディレクトリ
 	int[] URUDOSI_M = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	int[] HEINEN_M = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	JTextField yearT = new JTextField("");
