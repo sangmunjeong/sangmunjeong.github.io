@@ -31,10 +31,12 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	String[] DoW = {"-", "月", "火", "水", "木", "金", "土", "日"};
 	int[] URUDOSI_M = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	int[] HEINEN_M = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-	int year = Calendar.getInstance().get(Calendar.YEAR);
+	int calyear = Calendar.getInstance().get(Calendar.YEAR);
+	int calmonth = Calendar.getInstance().get(Calendar.MONTH)+1;
 	static String INFOR_M = "メッセージ";
 	static String INFOR_NAME = "休日の名称を入力してください。";
 	static String INFOR_DAY = "日付を正しく入力してください。";
+	static String dirPath = "C:\\pleiades\\workspace\\Karenda\\date\\";//ディレクトリ
 	JTextField month1 = new JTextField("", 4);
 	JTextField day1 = new JTextField("", 4);
 	JTextField month2 = new JTextField("", 4);
@@ -59,6 +61,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	JRadioButton radiotype2 = new JRadioButton("特殊");
 	ButtonGroup Holiday = new ButtonGroup();
 	ButtonGroup type = new ButtonGroup();
+	Karenda kal;
 
 	JPanel top;
 	JPanel center;
@@ -72,8 +75,9 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 		DowIndex.put("土",6);
 		DowIndex.put("日",0);
 	};
-	MkfileWindow() {
+	MkfileWindow(Karenda kal) {
 
+		this.kal = kal;
 		setTitle("休日SET");
 		setBounds(200, 200, 450, 250);
 		setResizable(false);
@@ -294,7 +298,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	//○月○番目○日の日付計算
 	private int DoWdate(int month, int DoW, int count){
 		int maxdate = getMaxDate(month);
-		int startDay = yobi(year, month);
+		int startDay = yobi(calyear, month);
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for(int i=1;i<=7;i++) {
 			map.put(startDay, i);
@@ -359,7 +363,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	//入力した月のmax日計算
 	private int getMaxDate(int month) {
 		int maxdate=0;
-		if(isUrudosi(year)) {
+		if(isUrudosi(calyear)) {
 			maxdate = URUDOSI_M[month-1];
 		}
 		else {
@@ -457,14 +461,16 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 			try {
 				String fileName = holiName.getText();
 				String str = getDate();
-				bs = new BufferedOutputStream(new FileOutputStream("C:\\pleiades\\workspace\\Karenda\\date\\" + fileName + ".txt"));
+				bs = new BufferedOutputStream(new FileOutputStream(dirPath + fileName + ".txt"));
 				bs.write(str.getBytes());
-				dispose();
+
 			} catch(Exception e1) {
 				e1.getStackTrace();
 			}finally {
 				try {
 					bs.close();
+					kal.setDay(calyear, calmonth);
+					dispose();
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
