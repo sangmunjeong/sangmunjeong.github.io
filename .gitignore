@@ -1,0 +1,9 @@
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+Servers/
+
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
