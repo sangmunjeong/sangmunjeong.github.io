@@ -36,7 +36,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	static String INFOR_M = "メッセージ";
 	static String INFOR_NAME = "休日の名称を入力してください。";
 	static String INFOR_DAY = "日付を正しく入力してください。";
-	static String dirPath = "C:\\pleiades\\workspace\\Karenda\\date\\";//ディレクトリ
+	static String dirPath = "date\\";
 	JTextField month1 = new JTextField("", 4);
 	JTextField day1 = new JTextField("", 4);
 	JTextField month2 = new JTextField("", 4);
