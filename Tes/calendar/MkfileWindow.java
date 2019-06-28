@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.Normalizer;
@@ -53,7 +54,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	JLabel labelMonth3 = new JLabel("月");
 	JLabel labelCount = new JLabel("番目");
 	JLabel labelDoW = new JLabel("曜日");
-	JLabel labelName = new JLabel("祝日名称:");
+	JLabel labelName = new JLabel("休日名称:");
 	JLabel labelHoli = new JLabel("連休有無");
 	JRadioButton radioHoli1 = new JRadioButton("有");
 	JRadioButton radioHoli2 = new JRadioButton("無");
@@ -78,7 +79,7 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 	MkfileWindow(Karenda kal) {
 
 		this.kal = kal;
-		setTitle("休日SET");
+		setTitle("休日セット");
 		setBounds(200, 200, 450, 250);
 		setResizable(false);
 		setVisible(true);
@@ -461,6 +462,15 @@ public class MkfileWindow extends JFrame implements ItemListener, ActionListener
 			try {
 				String fileName = holiName.getText();
 				String str = getDate();
+				File Folder = new File(dirPath);
+				if(!Folder.exists()) {
+					try {
+						Folder.mkdir();
+					}
+					catch(Exception mke){
+						mke.getStackTrace();
+					}
+				}
 				bs = new BufferedOutputStream(new FileOutputStream(dirPath + fileName + ".txt"));
 				bs.write(str.getBytes());
 
